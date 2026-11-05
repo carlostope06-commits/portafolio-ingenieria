@@ -9,6 +9,9 @@ En este repositorio recojo las prácticas y proyectos de la carrera que mejor mu
 | # | Proyecto | Asignatura | Tecnologías | Estado |
 |---|---|---|---|---|
 | 01 | [Campo magnético giratorio en un sistema trifásico](proyectos/01-campo-magnetico-giratorio/) | Instalaciones y Máquinas Eléctricas | MATLAB · Python | ✅ Entregado |
+| 02 | [Sistema de votación electrónica en FPGA](proyectos/02-sistema-votacion-fpga/) | Electrónica Digital | VHDL · Xilinx ISE · Nexys3 | ✅ Entregado |
+| 03 | [Control de acceso con máquina de estados (FSM)](proyectos/03-control-acceso-fsm/) | Electrónica Digital | VHDL · FSM Moore · Nexys3 | ✅ Entregado |
+| 04 | [Laboratorio de electrónica analógica y circuitos](proyectos/04-laboratorio-electronica-analogica/) | Fundamentos de Electrónica · Teoría de Circuitos | SPICE · WaveForms · instrumentación | ✅ Entregado |
 
 <p align="center"><img src="proyectos/01-campo-magnetico-giratorio/media/campo_giratorio.svg" width="720" alt="Campo magnético giratorio"></p>
 
@@ -26,8 +29,9 @@ Trabajos en curso que se añadirán cuando estén entregados:
 ## Competencias
 
 - **Simulación y cálculo:** MATLAB, Python (NumPy, Matplotlib)
-- **Electrotecnia:** sistemas trifásicos, máquinas eléctricas, instalaciones de baja tensión
-- **Electrónica digital:** FPGA (Xilinx ISE), máquinas de estados (Active-HDL)
+- **Electrotecnia:** teoría de circuitos, sistemas trifásicos, máquinas eléctricas, instalaciones de baja tensión
+- **Electrónica digital:** VHDL, FPGA (Xilinx ISE, Spartan-6/Nexys3), diseño combinacional y secuencial, máquinas de estados
+- **Electrónica analógica:** diodos, transistores BJT, amplificadores operacionales, simulación SPICE, instrumentación (osciloscopio, Analog Discovery)
 - **Ingeniería térmica e hidráulica:** volúmenes de control, flujo en conductos, transmisión de calor
 - **Control y señal:** control por computador, procesamiento digital de la señal
 
@@ -35,8 +39,11 @@ Trabajos en curso que se añadirán cuando estén entregados:
 
 ```
 proyectos/
-└── 01-campo-magnetico-giratorio/
-    ├── matlab/   código original
-    ├── python/   versión ejecutable sin MATLAB
-    └── media/    animación del resultado
+├── 01-campo-magnetico-giratorio/
+│   ├── matlab/   código original
+│   ├── python/   versión ejecutable sin MATLAB
+│   └── media/    animación del resultado
+├── 02-sistema-votacion-fpga/
+├── 03-control-acceso-fsm/
+└── 04-laboratorio-electronica-analogica/
 ```
