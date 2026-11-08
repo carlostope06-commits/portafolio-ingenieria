@@ -12,6 +12,7 @@ En este repositorio recojo las prácticas y proyectos de la carrera que mejor mu
 | 02 | [Sistema de votación electrónica en FPGA](proyectos/02-sistema-votacion-fpga/) | Electrónica Digital | VHDL · Xilinx ISE · Nexys3 | ✅ Entregado |
 | 03 | [Control de acceso con máquina de estados (FSM)](proyectos/03-control-acceso-fsm/) | Electrónica Digital | VHDL · FSM Moore · Nexys3 | ✅ Entregado |
 | 04 | [Laboratorio de electrónica analógica y circuitos](proyectos/04-laboratorio-electronica-analogica/) | Fundamentos de Electrónica · Teoría de Circuitos | SPICE · WaveForms · instrumentación | ✅ Entregado |
+| 05 | [Automatización de una estación de carga de rodamientos con PLC](proyectos/05-automatizacion-plc-twincat/) | Automatización Industrial | TwinCAT 3 · GRAFCET/SFC · ST · EtherCAT | ✅ Entregado |
 
 <p align="center"><img src="proyectos/01-campo-magnetico-giratorio/media/campo_giratorio.svg" width="720" alt="Campo magnético giratorio"></p>
 
@@ -32,6 +33,7 @@ Trabajos en curso que se añadirán cuando estén entregados:
 - **Electrotecnia:** teoría de circuitos, sistemas trifásicos, máquinas eléctricas, instalaciones de baja tensión
 - **Electrónica digital:** VHDL, FPGA (Xilinx ISE, Spartan-6/Nexys3), diseño combinacional y secuencial, máquinas de estados
 - **Electrónica analógica:** diodos, transistores BJT, amplificadores operacionales, simulación SPICE, instrumentación (osciloscopio, Analog Discovery)
+- **Automatización industrial:** PLC Beckhoff TwinCAT 3, IEC 61131-3 (SFC/GRAFCET y Texto Estructurado), guía GEMMA, E/S EtherCAT, HMI
 - **Ingeniería térmica e hidráulica:** volúmenes de control, flujo en conductos, transmisión de calor
 - **Control y señal:** control por computador, procesamiento digital de la señal
 
@@ -45,5 +47,7 @@ proyectos/
 │   └── media/    animación del resultado
 ├── 02-sistema-votacion-fpga/
 ├── 03-control-acceso-fsm/
-└── 04-laboratorio-electronica-analogica/
+├── 04-laboratorio-electronica-analogica/
+└── 05-automatizacion-plc-twincat/
+    └── codigo/   ST y exportación de los 9 GRAFCET
 ```
