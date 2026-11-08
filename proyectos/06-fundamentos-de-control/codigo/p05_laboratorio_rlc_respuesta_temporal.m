@@ -112,7 +112,7 @@ step(G)
 %% Tarea 13
 % Asimismo, compare el valor obtenido en los apartados 3) y 9) para la ganancia estática del
 % sistema.
-%Las ganancias de ambos apartados son iguales de un volteo
+%Las ganancias de ambos apartados son iguales: 1 (V/V)
 
 %% Tarea 14
 % Tarea 21: Compare el valor extremo de la resistencia del potenciómetro determinado en los
@@ -132,14 +132,17 @@ step(G)
 %% Tarea 16
 % Asimismo, compare el valor obtenido en los apartados 3) y 10) para la ganancia estática del
 % sistema.
-%Tanto en el primer apartado como en el segundo la ganancia es de un
-%volteo
+%Tanto en el primer apartado como en el segundo la ganancia es de
+%1 (V/V)
 
 %% Tarea 17
 % Tarea 23: Compare el valor de la resistencia del potenciómetro determinado en los apartados 4)
 % y 12) para el cual el comportamiento del sistema es clasificable como críticamente amortiguado
-%En el primer apartado la resistencia ha de ser de 11.5k y en el segundo se ha
-%calculado de que sea de 7.63k
+%En el primer apartado la resistencia total ha de ser 2*sqrt(L/C) = 11.5k, es
+%decir, 10.5k en el potenciómetro (restando R_L = 1k). En el laboratorio el
+%crítico se obtiene con 7.63k: el circuito real tiene unos 2.6k de
+%resistencia adicional (generador y pérdidas de la bobina) que el modelo
+%nominal no incluye
 
 %% Tarea 18
 % El tiempo de establecimiento (según el criterio del 5%).
@@ -151,8 +154,8 @@ step(G)
 %% Tarea 19
 % Asimismo, compare el valor obtenido en los apartados 3) y 11) para la ganancia estática del
 % sistema.
-%Tanto en el primer apartado como en el segundo, la ganancia es de un
-%volteo
+%Tanto en el primer apartado como en el segundo, la ganancia es de
+%1 (V/V)
 
 %% Tarea 20
 % Tarea 25: Para el valor extremo de la resistencia del potenciómetro para el cual el sistema

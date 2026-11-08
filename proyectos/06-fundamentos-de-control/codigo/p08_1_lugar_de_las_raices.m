@@ -60,7 +60,15 @@ rlocus(G,K)
 % Obtener cual sería la posición del polo, el coeficiente de amortiguamiento y la sobreoscilación
 % para una ganancía K=2. Comprueba visualmente que dichos resultados concuerdan con la respuesta
 % del sistema ante una entrada escalón unitario. ¿Qué sucede?
-G5=tf([4 10],[1 3 4]);
-%la posición sería -3, su coeficiente de amortiguamiento es 1 y la
-%sobreoscilación 0
-step(G5)
+s=tf('s');
+G5=(2*s+5)/(s^2+3*s+4);
+Gbc=feedback(2*G5,1)     % bucle cerrado con K = 2: (4s+10)/(s^2+7s+14)
+damp(Gbc)
+step(Gbc)
+%Los polos en bucle cerrado son -3.5 ± 1.32i, con zeta = 0.935, así que por
+%los polos se esperaría una sobreoscilación prácticamente nula (0.02 %).
+%Sin embargo, la respuesta al escalón tiene una sobreoscilación de casi el
+%6 % (pico 0.755 frente a un valor final de 10/14 = 0.714). Esto sucede
+%porque el bucle cerrado tiene un cero en -2.5, más cerca del eje imaginario
+%que los polos, y ese cero acelera la respuesta y provoca el sobrepico. Las
+%fórmulas de segundo orden solo valen si no hay ceros cercanos.

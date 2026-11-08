@@ -33,18 +33,21 @@ Gc = K*((s + 1/T)/s)
 syms Kp Ti Td s
 G = 2/(s^2 + 2*s +2); H = 1;
 Gc = (Kp*(1+Ti*s+Ti*Td*s^2))/(Ti*s);
-pd = [-7.5159 ; -2.6509 + 3.8044i ; -2.6509 - 3.8044i];
+pd = [-7.4159 ; -2.6509 + 3.8044i ; -2.6509 - 3.8044i];
 ec = simplify(1+G*Gc*H, 'Steps',20,'All',true)
 ec = ec(3)
 [N,D] = numden(ec);
 N = simplify(N/Ti,'Steps',20,'All',true)
 N = N(2)
 ecp = expand((s-pd(1))*(s-pd(2))*(s-pd(3)))
-sol = solve((2 + 2*Kp*Td) == 128177/10000,
-(2+2*Kp)==(6134852879/100000000) , (2*Kp)/Ti == 161597337884703/1000000000000,
-[Kp,Ti,Td]) ;
+c = real(coeffs(ecp, s, 'All'))     % [1  12.7177  60.8183  159.4473]
+sol = solve(2 + 2*Kp*Td == c(2), 2 + 2*Kp == c(3), (2*Kp)/Ti == c(4), [Kp,Ti,Td]);
 Kp = double(sol.Kp)
 Ti = double(sol.Ti)
 Td = double(sol.Td)
 s = tf('s');
 Gc = (Kp*(1+Ti*s+Ti*Td*s^2))/(Ti*s)
+% Kp = 29.41, Ti = 0.369 s, Td = 0.182 s
+Gbc = feedback(Gc*2/(s^2+2*s+2), 1);
+pole(Gbc)                            % -7.4159 y -2.6509 ± 3.8044i
+step(feedback(2/(s^2+2*s+2),1), Gbc), legend('Sin controlador','Con PID')

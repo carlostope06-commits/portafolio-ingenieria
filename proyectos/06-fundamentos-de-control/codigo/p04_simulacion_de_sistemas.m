@@ -87,7 +87,7 @@ step(G_15)
 % de la planta definida por la función de transferencia G(s)=frac{2(s+1)}{(s+2+1i)(s+2-1i)}, y
 % graficarla en color magenta y utilizando un estilo de línea de guiones.
 G = zpk(-1, [-2-1*i -2+1*i], 2)
-tep(3*G, 0:0.1:5, 'm--')
+step(3*G, 0:0.1:5, 'm--')
 
 %% Tarea 10
 % impulse( sys , t ): simula la respuesta ante entrada impulso del sistema my entradas de
@@ -105,8 +105,8 @@ impulse(G, 50)
 % Pista: help legend puede serte de ayuda.
 s = tf('s');
 G=tf(1,[1 2 2]);
-t=1:10;
-y=step(G/s,t);
+t=0:0.01:10;
+y=step(G/s,t);   % la rampa es la respuesta al escalón de G(s)/s
 plot(t,t,'b',t,y,'r:')
 legend ('u(t)','c(t)')
 
@@ -116,8 +116,8 @@ legend ('u(t)','c(t)')
 % amplitud 5 voltios, recreando un escenario donde se alimenta al circuito desde el instante t=2s
 % hasta t=4s.
 G = tf(2000, [1 20 2000]);
+t = 0:0.001:8;     % 8 segundos de simulación
 u = zeros(size(t)); % Inicialmente toda la señal es 0
-u(t >= 2 & t <= 4) = 5; %La solucion usa la alimentacion desde 2 hasta 5, pero el
-enunciado pide hasta 4
+u(t >= 2 & t <= 4) = 5; % 5 V entre t = 2 s y t = 4 s
 y = lsim(G, u, t);
 plot(t, u, t, y); legend('u(t)', 'c(t)')
