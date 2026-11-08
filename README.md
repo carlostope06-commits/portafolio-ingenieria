@@ -13,6 +13,7 @@ En este repositorio recojo las prácticas y proyectos de la carrera que mejor mu
 | 03 | [Control de acceso con máquina de estados (FSM)](proyectos/03-control-acceso-fsm/) | Electrónica Digital | VHDL · FSM Moore · Nexys3 | ✅ Entregado |
 | 04 | [Laboratorio de electrónica analógica y circuitos](proyectos/04-laboratorio-electronica-analogica/) | Fundamentos de Electrónica · Teoría de Circuitos | SPICE · WaveForms · instrumentación | ✅ Entregado |
 | 05 | [Automatización de una estación de carga de rodamientos con PLC](proyectos/05-automatizacion-plc-twincat/) | Automatización Industrial | TwinCAT 3 · GRAFCET/SFC · ST · EtherCAT | ✅ Entregado |
+| 06 | [Fundamentos de Control: modelado, análisis y diseño de controladores](proyectos/06-fundamentos-de-control/) | Fundamentos de Control | MATLAB · lugar de las raíces · Bode · PID · laboratorio | ✅ Entregado |
 
 <p align="center"><img src="proyectos/01-campo-magnetico-giratorio/media/campo_giratorio.svg" width="720" alt="Campo magnético giratorio"></p>
 
@@ -35,7 +36,8 @@ Trabajos en curso que se añadirán cuando estén entregados:
 - **Electrónica analógica:** diodos, transistores BJT, amplificadores operacionales, simulación SPICE, instrumentación (osciloscopio, Analog Discovery)
 - **Automatización industrial:** PLC Beckhoff TwinCAT 3, IEC 61131-3 (SFC/GRAFCET y Texto Estructurado), guía GEMMA, E/S EtherCAT, HMI
 - **Ingeniería térmica e hidráulica:** volúmenes de control, flujo en conductos, transmisión de calor
-- **Control y señal:** control por computador, procesamiento digital de la señal
+- **Control:** modelado y linealización, lugar de las raíces, Bode, compensadores en adelanto, PI/PID, identificación experimental
+- **Señal:** procesamiento digital de la señal
 
 ## Estructura
 
@@ -48,6 +50,9 @@ proyectos/
 ├── 02-sistema-votacion-fpga/
 ├── 03-control-acceso-fsm/
 ├── 04-laboratorio-electronica-analogica/
-└── 05-automatizacion-plc-twincat/
-    └── codigo/   ST y exportación de los 9 GRAFCET
+├── 05-automatizacion-plc-twincat/
+│   └── codigo/   ST y exportación de los 9 GRAFCET
+└── 06-fundamentos-de-control/
+    ├── codigo/   scripts MATLAB de cada práctica
+    └── figuras/  resultados de los diseños
 ```
