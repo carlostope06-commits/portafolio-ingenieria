@@ -99,7 +99,8 @@ Es decir, hay unos 2,6 kΩ de resistencia que el modelo nominal no tiene en cuen
 
 - **Antes de dibujar el lugar**, predigo número de ramas, asíntotas y si cruzará al semiplano derecho, y lo compruebo con `rlocus`.
 - Obtengo los polos en bucle cerrado para un **rango de ganancias** (`rlocus(G, K)`).
-- Con `rltool` busco el **rango de K de un controlador proporcional** que cumple a la vez varias especificaciones: tiempo de establecimiento, sobreoscilación, tiempo de pico y error en régimen permanente. También identifico qué combinaciones de especificaciones **no se pueden cumplir** con un control proporcional. Ese es el punto de partida para diseñar compensadores.
+- Compruebo cuándo dejan de valer las fórmulas de segundo orden: con K = 2, los polos de `(2s+5)/(s²+3s+4)` en bucle cerrado tienen ζ = 0,935 y predicen una sobreoscilación casi nula, pero la respuesta real sobreoscila un 6 % por el cero en −2,5.
+- Con `rltool` busco el **rango de K de un controlador proporcional** que cumple a la vez varias especificaciones: tiempo de establecimiento, sobreoscilación, tiempo de pico y error en régimen permanente (ante escalón o ante rampa, según el tipo del sistema), sin salir del rango de K que mantiene el sistema estable según Routh. También identifico qué combinaciones de especificaciones **no se pueden cumplir** con un control proporcional. Ese es el punto de partida para diseñar compensadores.
 
 ---
 
@@ -161,10 +162,10 @@ El método consiste en igualar la **ecuación característica** del sistema con 
 - s² + (0,0375 + 0,1K)s + 0,1K/T = (s − p₁)(s − p₂)
 - **K = 0,375 · T = 9,38 s**
 
-**PID** para `G(s) = 2 / (s² + 2s + 2)` con polos deseados −7,516 y −2,651 ± 3,804j:
+**PID** para `G(s) = 2 / (s² + 2s + 2)` con polos deseados −7,416 y −2,651 ± 3,804j:
 
 - s³ + (2 + 2KpTd)s² + (2 + 2Kp)s + 2Kp/Ti = (s − p₁)(s − p₂)(s − p₃)
-- **Kp = 29,7 · Ti = 0,367 s · Td = 0,182 s**
+- **Kp = 29,4 · Ti = 0,369 s · Td = 0,182 s**
 
 <p align="center"><img src="figuras/p12_respuesta_pid.svg" width="640" alt="Respuesta con y sin PID"></p>
 
